@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroSearchComponent } from './hero-search.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroService } from './hero.service';
 
@@ -22,7 +23,8 @@ import { InMemoryDataService }  from './in-memory-data.service';
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent, 
+    HeroSearchComponent
   ],
 
   imports: [
