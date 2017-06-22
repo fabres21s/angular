@@ -1,45 +1,44 @@
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroSearchComponent } from './hero-search.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroService } from './hero.service';
+import { Router } from '@angular/router';
 
+import { AppComponent }            from './app.component';
+import { AppRoutingModule }        from './app-routing.module';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { HeroesModule }            from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message.component';
+import { LoginRoutingModule }      from './login-routing.module';
+import { LoginComponent }          from './login.component';
+import { PageNotFoundComponent }   from './not-found.component';
 
+import { DialogService }           from './dialog.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    DashboardComponent, 
-    HeroSearchComponent
-  ],
-
   imports: [
     BrowserModule,
     FormsModule,
+    HeroesModule,
+    LoginRoutingModule,
     AppRoutingModule,
-    HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    BrowserAnimationsModule
   ],
-
+  declarations: [
+    AppComponent,
+    ComposeMessageComponent,
+    LoginComponent,
+    PageNotFoundComponent
+  ],
   providers: [
-    HeroService
+    DialogService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-
-
-export class AppModule { }
+export class AppModule {
+  // Diagnostic only: inspect router configuration
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+}
