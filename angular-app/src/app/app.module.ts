@@ -1,7 +1,6 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { Router } from '@angular/router';
 
@@ -22,8 +21,7 @@ import { DialogService }           from './dialog.service';
     FormsModule,
     HeroesModule,
     LoginRoutingModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,

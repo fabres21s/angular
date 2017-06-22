@@ -1,7 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { slideInDownAnimation }   from '../animations';
 import { Crisis }         from './crisis.service';
 import { DialogService }  from '../dialog.service';
 
@@ -21,8 +20,7 @@ import { DialogService }  from '../dialog.service';
     </p>
   </div>
   `,
-  styles: ['input {width: 20em}'],
-  animations: [ slideInDownAnimation ]
+  styles: ['input {width: 20em}']
 })
 export class CrisisDetailComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;

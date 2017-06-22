@@ -2,8 +2,6 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { slideInDownAnimation } from '../animations';
-
 import { Hero, HeroService }  from './hero.service';
 
 @Component({
@@ -21,8 +19,7 @@ import { Hero, HeroService }  from './hero.service';
       <button (click)="gotoHeroes()">Back</button>
     </p>
   </div>
-  `,
-  animations: [ slideInDownAnimation ]
+  `
 })
 export class HeroDetailComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation = true;
