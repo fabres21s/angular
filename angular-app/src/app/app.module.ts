@@ -6,11 +6,10 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroSearchComponent } from './hero-search.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroService } from './hero.service';
+import { FileuploadComponent } from './fileupload/fileupload.component';
+import {FileSelectDirective} from './fileupload/file-select.directive';
+import {FileDropDirective} from './fileupload/file-drop.directive';
+
 
 
 // Imports for loading & configuring the in-memory web api
@@ -21,10 +20,9 @@ import { InMemoryDataService }  from './in-memory-data.service';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    DashboardComponent, 
-    HeroSearchComponent
+   FileuploadComponent,
+   FileSelectDirective,
+   FileDropDirective
   ],
 
   imports: [
@@ -36,8 +34,13 @@ import { InMemoryDataService }  from './in-memory-data.service';
   ],
 
   providers: [
-    HeroService
+
   ],
+  exports: [
+     FileSelectDirective,
+    FileDropDirective
+  ],
+  
   bootstrap: [AppComponent]
 })
 

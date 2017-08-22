@@ -1,21 +1,18 @@
 /**
- * Módulo donde se establecen las reglas de navegación
+ * Mï¿½dulo donde se establecen las reglas de navegaciï¿½n
  */
 
+import { FileuploadComponent } from './fileupload/fileupload.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
  
-import { DashboardComponent }   from './dashboard.component';
-import { HeroesComponent }      from './heroes.component';
-import { HeroDetailComponent }  from './hero-detail.component';
  
  
-//aquí se harían consultas (WS) para hacerlo dinámico? 
+//aquï¿½ se harï¿½an consultas (WS) para hacerlo dinï¿½mico? 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard',  component: DashboardComponent },
-  { path: 'detail/:id', component: HeroDetailComponent },
-  { path: 'heroes',     component: HeroesComponent }
+  { path: '', redirectTo: '/fileupload', pathMatch: 'full' },
+  { path: 'fileupload',  component: FileuploadComponent },
+
 ];
  
 @NgModule({
